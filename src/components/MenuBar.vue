@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="menu-bar font-small-caps">
+  <div class="menu-bar font-small-caps absolute">
     <div class="btn-back">
       <svg
         width="16"

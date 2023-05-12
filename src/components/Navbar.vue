@@ -1,12 +1,13 @@
 <template>
     <nav>
         <div class="nav-bar nav-bar-sm">
-            <span>
+            <a href="#"><span>
                 <img src='@/assets/icons/logo.svg' alt="ribbon education"/>
             </span>
+            </a>
             <div class="">
                 <Button class="btn-ghost">about</Button>
-                <Button class="btn-primary"><span class=" hidden sm:inline">BOOK</span> DEMO</Button>
+                <Button class="btn-primary"><span class="hidden sm:inline">BOOK</span> DEMO</Button>
             </div>
         </div>
     </nav>

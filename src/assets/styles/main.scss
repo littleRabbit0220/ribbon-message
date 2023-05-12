@@ -1,7 +1,6 @@
 @import 'values';
 
 .nav-bar {
-    position: fixed;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -178,8 +177,12 @@
             border: 1px solid transparent;
             background-color: $whiteColor;
         }
-       
+        &:focus {
+            background-color: $primaryColor;
+            color: $whiteColor;
+        }  
     }
+    
     &:active {
         border-color: $primaryColor;
     }
@@ -189,12 +192,6 @@
             padding: 8px;
         }
     }
-
-    .card-selected {
-        background-color: $primaryColor;
-        color: $whiteColor;
-    }
-
 }
 
 .text-area {
