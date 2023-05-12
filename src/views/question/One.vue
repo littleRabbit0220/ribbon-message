@@ -18,7 +18,3 @@ export default {
     name: 'first Question',
 }
 </script>
-
-<style scoped lang="scss">
-@import "@/assets/styles/main.scss";
-</style>

@@ -1,11 +1,11 @@
 <template>
     <div class="toggle-card">
-        <div :class="{'card card-sm':!isSelectd, 'card card-sm card-selected':isSelected}" @click="isSelected=!isSelected">
+        <button class="card card-sm w-full" ref="">
             <span :hidden="!icon" class="mr-4">
                 <img :src="icon" class="mr-13" height="45px" />
             </span>
             {{ text }}
-        </div>
+        </button>
     </div>
 </template>
 <script>
