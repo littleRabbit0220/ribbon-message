@@ -42,6 +42,7 @@
     background-color: $primaryColor;
     color: $whiteColor;
     border: 2px solid transparent;
+
     &:hover {
         background-color: $primaryColor600;
     }
@@ -65,6 +66,7 @@
 .btn-ghost {
     background-color: $whiteColor;
     color: $primaryColor;
+
     &:hover {
         background-color: $primaryColor100;
     }
@@ -145,7 +147,9 @@
     border-radius: 12px;
     box-sizing: border-box;
     border: 2px solid transparent;
+
     .card {
+        cursor: pointer;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -164,25 +168,43 @@
         text-transform: uppercase;
         color: $primaryColor;
         box-sizing: border-box;
+
         &:hover {
             border: 1px solid $primaryColor;
             background-color: $primaryColor100;
         }
+
         &:active {
             border: 1px solid transparent;
             background-color: $whiteColor;
         }
+       
     }
     &:active {
         border-color: $primaryColor;
     }
 
     @media screen and (max-width: 640px) {
-       .card-sm {
-         padding: 8px;
-       }
+        .card-sm {
+            padding: 8px;
+        }
     }
 
+    .card-selected {
+        background-color: $primaryColor;
+        color: $whiteColor;
+    }
+
+}
+
+.text-area {
+    padding: 12px 16px;
+    border: 1px solid #D2CACA;
+    border-radius: 8px;
+    height: 200px;
+    word-wrap: break-word;
+    word-break: break-all;
+    box-shadow: 0 0 0 2px $primaryColor;
 }
 
 .form-content {

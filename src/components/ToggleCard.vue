@@ -1,6 +1,6 @@
 <template>
-    <div className="toggle-card">
-        <div className="card card-sm">
+    <div class="toggle-card">
+        <div :class="{'card card-sm':!isSelectd, 'card card-sm card-selected':isSelected}" @click="isSelected=!isSelected">
             <span :hidden="!icon" class="mr-4">
                 <img :src="icon" class="mr-13" height="45px" />
             </span>
@@ -19,6 +19,11 @@ export default {
         text: {
             type: String,
             default: "",
+        }
+    },
+    data() {
+        return {
+            isSelected: false,
         }
     }
 }

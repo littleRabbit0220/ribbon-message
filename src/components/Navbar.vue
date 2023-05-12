@@ -5,19 +5,17 @@
                 <img src='@/assets/icons/logo.svg' alt="ribbon education"/>
             </span>
             <div class="">
-                <button class="btn btn-md btn-sd btn-sm btn-ghost">
-                    ABOUT
-                </button>
-                <button class="btn btn-md btn-sd btn-sm btn-primary">
-                    <span class=" hidden sm:inline">BOOK</span> DEMO
-                </button>
+                <Button class="btn-ghost">about</Button>
+                <Button class="btn-primary"><span class=" hidden sm:inline">BOOK</span> DEMO</Button>
             </div>
         </div>
     </nav>
 </template>
 <script>
+    import Button from './Button.vue';
     export default {
         name: 'Navbar',
+        components: { Button,}
     }
 </script>
 <style scoped lang="scss">
