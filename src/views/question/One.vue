@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <div class="flex flex-col justify-center h-screen items-center">
+    <div class="flex flex-col flex-1">
+        <div class="flex flex-col justify-center h-full items-center">
             <div class="form-content form-content-sm">
                 <div class="text-main-content mb-4 w-full">Help me write a sample email to my learner who has:</div>
-                <ToggleCard text="missed assignments" />
-                <ToggleCard text="been absent from class" />
-                <ToggleCard text="been late to class" />
-                <ToggleCard text="a concering grade" />
+                <ToggleCard text="missed assignments" :onClick="redierctToPage" />
+                <ToggleCard text="been absent from class" :onClick="redierctToPage" />
+                <ToggleCard text="been late to class" :onClick="redierctToPage" />
+                <ToggleCard text="a concering grade"  :onClick="redierctToPage"/>
             </div>
         </div>
     </div>
@@ -16,6 +16,11 @@ import ToggleCard from '../../components/ToggleCard.vue';
 export default {
     components: {
         ToggleCard,
+    },
+    methods: {
+        redierctToPage() {
+            this.$router.push('/questions/2');
+        }
     },
     name: 'first Question',
 }
