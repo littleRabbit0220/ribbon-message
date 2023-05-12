@@ -20,3 +20,12 @@ export default {
 }
 </script>
 
+import Navbar from './components/Navbar.vue'
+
+export default {
+  components: {
+    Navbar
+  },
+  name: 'Question 1'
+}
+</script>
