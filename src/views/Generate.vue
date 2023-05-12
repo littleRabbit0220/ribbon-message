@@ -4,15 +4,12 @@
         <div class="w-full flex grow grid md:grid-cols-2 sm:gird-cols-1 ">
             <div class="md:flex flex-col grow w-full justify-center items-center hidden">
                 <div class="form-content form-content-md form-content-sd form-content-sm">
-                    <div class="text-main-content mb-4 w-full">How is this? Would you like it more:
+                    <div class="text-main-content mb-4 w-full">Here are 3additional drafts.
                     </div>
-                    <div class=" grid grid-cols-2">
-                        <ToggleCard text="holds a job" />
-                        <ToggleCard text="caretaker" />
-                        <ToggleCard text="recent illness" />
-                        <ToggleCard text="recent travel" />
-                        <ToggleCard text="Took time off" />
-                        <ToggleCard text="none apply" />
+                    <div class=" grid grid-cols-3">
+                        <ToggleCard text="DRAFT #4" />
+                        <ToggleCard text="DRAFT #5" />
+                        <ToggleCard text="DRAFT #6" />
                     </div>
                     <div class="flex flex-row w-full">
                         <Button class="btn-primary  mt-1 w-full">continue</Button>
@@ -33,15 +30,12 @@
             </div>
 
             <div class="sm-tool-bar ">
-                <div class="text-main-content mb-4">How is this? Would you like it more:
+                <div class="text-main-content mb-4">Here are 3additional drafts.
                 </div>
                 <div class="grid w-full grid-cols-3">
-                    <ToggleCard text="holds a job" />
-                    <ToggleCard text="caretaker" />
-                    <ToggleCard text="recent illness" />
-                    <ToggleCard text="recent travel" />
-                    <ToggleCard text="Took time off" />
-                    <ToggleCard text="none apply" />
+                    <ToggleCard text="DRAFT #4" />
+                    <ToggleCard text="DRAFT #5" />
+                    <ToggleCard text="DRAFT #6" />
                 </div>
                 <div class="flex flex-row w-full">
                     <Button class="btn-primary  mt-1 w-full">continue</Button>
@@ -52,11 +46,11 @@
     </div>
 </template>
 <script>
-import MenuBar from '../../components/MenuBar.vue';
-import ToggleCard from '../../components/ToggleCard.vue';
-import Button from '../../components/Button.vue';
-import Paper from '../../components/Paper.vue';
-import ShareButton from '../../components/ShareButton.vue';
+import MenuBar from '../components/MenuBar.vue';
+import ToggleCard from '../components/ToggleCard.vue';
+import Button from '../components/Button.vue';
+import Paper from '../components/Paper.vue';
+import ShareButton from '../components/ShareButton.vue';
 export default {
     components: {
         ToggleCard,
