@@ -15,6 +15,14 @@ export default defineConfig({
     loaderOptions: {
       sass: {
         prependData: `@import "@/assets/styles/_variables.scss"`
+      },
+      postcss: {
+        plugins: [
+          require('postcss-import'),
+          require('postcss-nested'),
+          require('tailwindcss')('./tailwind.js'),
+          require('autoprefixer')
+        ]
       }
     }
   }

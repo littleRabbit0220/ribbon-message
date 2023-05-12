@@ -1,0 +1,222 @@
+@import 'values';
+
+.nav-bar {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 24px 8px 24px;
+    align-items: center;
+}
+
+.text-main-content {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    padding: 0px 2px;
+}
+
+.btn {
+    //Medium-Desktop
+    border-radius: 8px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 16px 12px 16px;
+    margin-left: 2px;
+    margin-right: 2px;
+    box-sizing: content-box;
+    border: 2px solid transparent;
+}
+
+// btn-primary
+.btn-primary {
+    background-color: $primaryColor;
+    color: $whiteColor;
+    border: 2px solid transparent;
+    &:hover {
+        background-color: $primaryColor600;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        background-color: $primaryColor100;
+    }
+
+    &:active {
+        border: 2px solid $primaryColor;
+        background-color: $primaryColor700;
+    }
+
+    &:focus {
+        border: 2px solid $whiteColor;
+        outline: 2px solid $primaryColor;
+    }
+}
+
+.btn-ghost {
+    background-color: $whiteColor;
+    color: $primaryColor;
+    &:hover {
+        background-color: $primaryColor100;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        background-color: $whiteColor;
+    }
+
+    &:active {
+        background-color: $primaryColor100;
+    }
+
+    &:focus {
+        border: 2px solid $primaryColor;
+        outline: 2px solid $whiteColor;
+    }
+}
+
+.btn-secondary {
+    background-color: $whiteColor;
+    color: $primaryColor600;
+    border: 1px solid $primaryColor;
+
+    &:hover {
+        background-color: $primaryColor100;
+    }
+
+    &:active {
+        border: 2px solid #3D3593;
+        background-color: $primaryColor100;
+        color: $whiteColor;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        background-color: $whiteColor;
+    }
+
+    &:focus {
+        border: 2px solid white;
+        outline: 2px solid $primaryColor;
+    }
+}
+
+.btn-gray {
+    background-color: $whiteColor;
+    color: $darkGrayColor;
+    border: 2px solid transparent;
+
+    &:hover {
+        background-color: $borderGrayColor;
+        color: $blackColor;
+    }
+
+    &:active {
+        border: 2px solid #3D3593;
+        background-color: $grayColor;
+        color: $blackColor;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        background-color: $whiteColor;
+        color: $darkGrayColor;
+    }
+
+    &:focus {
+        background-color: $whiteColor;
+        color: darkgray;
+        border: 2px solid $primaryColor;
+    }
+}
+
+.toggle-card {
+    padding: 2px;
+    background-color: transparent;
+    border-radius: 12px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: $whiteColor;
+        padding: 16px 24px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        font-family: $fontFamily;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $primaryColor;
+        box-sizing: border-box;
+        &:hover {
+            border: 1px solid $primaryColor;
+            background-color: $primaryColor100;
+        }
+        &:active {
+            border: 1px solid transparent;
+            background-color: $whiteColor;
+        }
+    }
+    &:active {
+        border-color: $primaryColor;
+    }
+
+    @media screen and (max-width: 640px) {
+       .card-sm {
+         padding: 8px;
+       }
+    }
+
+}
+
+.form-content {
+    width: 480px;
+}
+
+@media screen and (max-width: 1024px) {
+    .btn-md {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px 16px 8px 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn-sd {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 12px 16px 12px 16px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .btn-sm {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 8px 8px 8px 8px;
+    }
+
+    .nav-bar-sm {
+        padding: 12px 16px 12px 16px;
+    }
+
+    .form-content-sm {
+        width: 312px;
+    }
+}
