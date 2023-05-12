@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Question_One
+      component: Question_Two
     }
   ]
 })

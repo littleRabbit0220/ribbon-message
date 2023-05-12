@@ -1,6 +1,6 @@
 <template>
-    <div class="toggle-card">
-        <button class="card card-sm w-full" ref="">
+    <div class="toggle-card flex">
+        <button class="card card-sm" ref="">
             <span :hidden="!icon" class="mr-4">
                 <img :src="icon" class="mr-13" height="45px" />
             </span>
