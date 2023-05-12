@@ -3,12 +3,12 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="h-screen w-screen flex flex-col">
-    <header>
-      <Navbar />
-    </header>
-    <RouterView />
-  </div>
+  <div class="min-h-screen w-screen flex flex-col justify-start">
+      <header>
+        <Navbar />
+      </header>
+      <RouterView />
+    </div>
 </template>
 <script>
 import Navbar from './components/Navbar.vue';

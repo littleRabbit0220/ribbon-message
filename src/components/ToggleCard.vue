@@ -1,8 +1,9 @@
 <template>
     <div class="toggle-card flex">
         <button class="card card-sm" ref="" :onClick="this.onClick">
-            <span :hidden="!icon" class="mr-4">
-                <img :src="icon" class="mr-13" height="45px" />
+            <span :hidden="!icon" class="md:mr-4 sm:mr-2 mr-1">
+                <img :src="icon" class="imgColor md:inline hidden"  width="45" height="45"/>
+                <img :src="icon" class="imgColor md:hidden inline"  width="24" height="24"/>
             </span>
             {{ text }}
         </button>
