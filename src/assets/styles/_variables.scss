@@ -24,7 +24,7 @@ $fontLineHeight: 24px;
 $fontPrimaryLineHeight: 28px;
 $fontSmallLineHeight: 16px;
 // font caps
-$fontCaps: 'uppercase';
+$fontCaps: uppercase;
 
 .font-text {
   font-family: $fontFamily;
@@ -78,6 +78,8 @@ $fontCaps: 'uppercase';
   text-transform: $fontCaps;
   color: $whiteColor;
   letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: $primaryColor600;
@@ -110,7 +112,7 @@ $fontCaps: 'uppercase';
   }
   &:active {
     background-color: $primaryColor100;
-    border:1px solid #3D3593;
+    border: 1px solid #3d3593;
   }
   &:focus {
     background-color: $primaryColor;
@@ -166,7 +168,49 @@ $fontCaps: 'uppercase';
     border: 1px solid $primaryColor;
   }
 }
-
-@media (min-width: 1024px) {
-  
+//define text input
+.input-text {
+  border: 1px solid #d2caca;
+  border-radius: 8px;
+  color: black;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  font-size: $fontPrimarySize;
+  line-height: $fontPrimaryLineHeight;
+  &::placeholder {
+    color: #acacac;
+  }
+  &:hover {
+    border: 1px solid #212121;
+  }
+  &:hover::placeholder {
+    color: #666666;
+  }
+  &:focus-visible {
+    border: 1px solid $primaryColor;
+    outline: none;
+  }
 }
+//define card
+.card {
+  padding: 16px 24px;
+  gap: 16px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 480px;
+  border: 2px solid transparent;
+  &:hover {
+    background-color: $primaryColor100;
+    border: 2px solid $primaryColor;
+  }
+  &:focus {
+    background-color: $primaryColor700;
+    border: 2px solid $primaryColor700;
+    color: $whiteColor;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
