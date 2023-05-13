@@ -12,7 +12,7 @@
                         <ToggleCard text="DRAFT #6" />
                     </div>
                     <div class="flex flex-row w-full">
-                        <Button class="btn-primary  mt-1 w-full">continue</Button>
+                        <Button class="btn-primary  mt-1 w-full">finish</Button>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
         </div>
         <div class=" md:hidden sm:block w-full fixed bottom-0 ">
             <div class="flex justify-end">
-                <ShareButton class="share-btn-sm mb-6 mr-6">
+                <ShareButton class="share-btn-sm mb-6 mr-6" :onCick="onClickShare">
                     <div class="flex">
                         <img src="/images/messageBox.svg" class="mr-2" alt="share" /> SHARE
                     </div>
@@ -38,7 +38,7 @@
                     <ToggleCard text="DRAFT #6" />
                 </div>
                 <div class="flex flex-row w-full">
-                    <Button class="btn-primary  mt-1 w-full">continue</Button>
+                    <Button class="btn-primary  mt-1 w-full">finish</Button>
                 </div>
             </div>
         </div>
@@ -60,9 +60,17 @@ export default {
         ShareButton
     },
     name: 'Second Question',
+    data() {
+        return {
+            isModalVisible: false,
+        }
+    },
     methods: {
         onClikcUpbeat() {
             this.$router.push('/questions/3/upbeat')
+        },
+        onClickShare() {
+            this.isModalVisible=true;
         }
     }
 }
