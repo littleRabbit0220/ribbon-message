@@ -13,16 +13,15 @@ export default {
       dialogVisible: true,
     }
   },
-  
   methods: {
     closeDialog() {
-      this.dialogVisible = false
+      this.dialogVisible = false;
     }
   }
 }
 </script>
 <template>
-  <div :class="{ 'hidden': !dialogVisible, }">
+  <div :class="{ 'hidden': !(showModal && dialogVisible) }">
     <div class="fixed w-screen h-screen left-0 top-0 modal-background">
       <div class="absolute w-full h-full" @click="closeDialog"></div>
       <div class="input-modal modal-wrapper">
