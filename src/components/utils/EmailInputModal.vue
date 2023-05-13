@@ -10,21 +10,24 @@ export default {
   },
   data() {
     return {
-      dialogVisible: true,
+      dialogVisible: this.showModal,
     }
-  },
-  mounted() {
-    this.dialogVisible = this.showModal;
   },
   methods: {
     closeDialog() {
-      this.showModal = false
+      this.dialogVisible = false;
+      this.$emit('close');
+    }
+  },
+  watch: {
+    showModal(newValue) {
+      this.dialogVisible = newValue;
     }
   }
 }
 </script>
 <template>
-  <div :class="{ 'hidden': !dialogVisible, }">
+  <div :class="{ 'hidden': !showModal}">
     <div class="fixed w-screen h-screen left-0 top-0 modal-background">
       <div class="absolute w-full h-full" @click="closeDialog"></div>
       <div class="input-modal modal-wrapper">

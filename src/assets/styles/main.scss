@@ -360,11 +360,39 @@
 }
 
 .thanks {
-    font-family: 'Outfit';
+    font-family: $fontFamily;
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
     color: $blackColor;
     margin-bottom: 32px;
+}
+
+.input {
+    background: $whiteColor;
+    border: 1px solid $borderGrayColor;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    ::placeholder {
+        color: $grayColor;
+    }
+    &:hover{
+        border: 1px solid $blackColor;
+    }
+    &:hover::placeholder{
+        color: $darkGrayColor;
+    }
+    &:focus{
+        border: 2px solid $primaryColor;
+    }
+    &:disabled {
+        
+    }
+
 }

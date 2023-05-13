@@ -5,7 +5,7 @@
                 <ToggleCard text="missed assignments" :onClick="redierctToPageTwo" />
                 <ToggleCard text="been absent from class" :onClick="redierctToPageTwo" />
                 <ToggleCard text="been late to class" :onClick="redierctToPageTwo" />
-                <ToggleCard text="a concering grade"  :onClick="redierctToPageFour"/>
+                <ToggleCard text="a concering grade"  :onClick="redierctToPageTwo"/>
             </div>
         </div>
 </template>
@@ -19,9 +19,6 @@ export default {
         redierctToPageTwo() {
             this.$router.push('/questions/2');
         },
-        redierctToPageFour() {
-            this.$router.push('/questions/4');
-        }
     },
     name: 'first Question',
 }
