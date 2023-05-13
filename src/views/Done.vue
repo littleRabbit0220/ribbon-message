@@ -2,20 +2,20 @@
     <div class="flex flex-col grow">
         <MenuBar />
         <div class="flex flex-col grow justify-center items-center">
-            <div class="form-content form-content-sm">
-                <div class="text-main-content mb-4 w-full">
-                    <span class="thanks">
-                        Thanks
-                    </span>
+            <div class="form-content">
+                <div  class="thanks">
+                    Thanks
+                </div>
+                <div class="text-main-content mb-4 w-full">                       
                     For more tools like these, check out Ribbon. Ribbons is
                     this first student CRM platform built for online adult education providera treamline operation and
                     improve student retention.
                 </div>
-                <div class="flex flex-col justify-center">
-                    <Button class="btn-primary mb-2">
+                <div class="grid grid-cols-2 md:grid-rows-5 w-full">
+                    <Button class="md:row-span-3 btn-primary md:mb-2 md:text-left btn-book">
                        Book a demo
                     </Button>
-                    <Button class="btn-secondary">
+                    <Button class="md:row-span-2 btn-secondary">
                        about ribbon
                     </Button>
                 </div>
@@ -24,14 +24,14 @@
     </div>
 </template>
 <script>
-import MenuBar from '../../components/MenuBar.vue';
-import Button from '../../components/Button.vue';
+import MenuBar from '../components/MenuBar.vue';
+import Button from '../components/Button.vue';
 export default {
     components: {
         MenuBar,
         Button
     },
-    name: 'Second Question',
+    name: 'done',
     methods: {
         redirectToPage() {
             this.$router.push('/questions/3');
@@ -40,3 +40,5 @@ export default {
 
 }
 </script>
+
+

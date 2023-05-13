@@ -1,4 +1,3 @@
-<script setup></script>
 
 <template>
   <div class="menu-bar font-small-caps">
@@ -19,7 +18,7 @@
       </svg>
       <span>Back</span>
     </a>
-    <a class="btn-start" href="/questions/1">
+    <a class="btn-start" v-on:click="startOver">
       <svg
         width="16"
         height="16"
@@ -37,6 +36,7 @@
       <span>Start Over</span>
     </a>
   </div>
+  <ConfirmModal :showModal="isModalVisible" @close="closeModal"></ConfirmModal>
 </template>
 
 <style lang="scss">
@@ -86,11 +86,26 @@
 </style>
 
 <script>
+import ConfirmModal from './utils/ConfirmModal.vue';
   export default {
     methods: {
         goBack() {
             this.$router.go(-1);
+        },
+        startOver() {
+          this.isModalVisible = true;
+        },
+        closeModal() {
+          this.isModalVisible = false;
         }
     },
+    components: {
+      ConfirmModal
+    },
+    data() {
+      return {
+        isModalVisible: false
+      }
+    }
   }
 </script>

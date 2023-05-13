@@ -1,4 +1,5 @@
 <script>
+import SuccessModal from './SuccessModal.vue';
 export default {
   props: {
     title: String,
@@ -11,10 +12,19 @@ export default {
   data() {
     return {
       dialogVisible: this.showModal,
+      isModalVisible: false,
     }
   },
   methods: {
     closeDialog() {
+      this.dialogVisible = false;
+      this.$emit('close');
+    },
+    closeSuccessModal() {
+      this.isModalVisible = false;
+    },
+    shareDraft() {
+      this.isModalVisible = true;
       this.dialogVisible = false;
       this.$emit('close');
     }
@@ -23,6 +33,9 @@ export default {
     showModal(newValue) {
       this.dialogVisible = newValue;
     }
+  },
+  components: {
+    SuccessModal
   }
 }
 </script>
@@ -42,17 +55,26 @@ export default {
           </div>
           <div class="modal-content">
             <input type="text" class="input-text" />
-            <button type="button" class="btn btn-primary font-small-caps">share drafts</button>
+            <button type="button" class="btn btn-primary btn-share-modal  font-small-caps share-btn-modal" @click="shareDraft">share drafts</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <SuccessModal :showModal="isModalVisible" @close="closeSuccessModal"></SuccessModal>
 </template>
 
 <style scoped lang="scss">
 @import '@/assets/styles/main.scss';
 
+@media screen and (max-width: 640px) {
+  .input-modal .modal {
+    width:100% !important;
+   }
+   .input-modal {
+    padding:0 50px 0px 24px !important
+   }
+}
 .modal-background {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
