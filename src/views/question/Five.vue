@@ -4,18 +4,16 @@
         <div class="w-full flex grow grid md:grid-cols-2 sm:gird-cols-1 ">
             <div class="md:flex flex-col grow w-full justify-center items-center hidden">
                 <div class="form-content form-content-md form-content-sd form-content-sm">
-                    <div class="text-main-content mb-4 w-full">How is this? Would you like it more:
+                    <div class="text-main-content mb-4 w-full ml-2">Here are <span class="text-primary-content">3 additional
+                            drafts.</span>
                     </div>
-                    <div class=" grid grid-cols-2">
-                        <ToggleCard text="holds a job" />
-                        <ToggleCard text="caretaker" />
-                        <ToggleCard text="recent illness" />
-                        <ToggleCard text="recent travel" />
-                        <ToggleCard text="Took time off" />
-                        <ToggleCard text="none apply" />
+                    <div class=" grid grid-cols-3 w-full">
+                        <ToggleCard text="Draft #4" />
+                        <ToggleCard text="Draft #5" />
+                        <ToggleCard text="Draft #6" />
                     </div>
-                    <div class="flex flex-row w-full">
-                        <Button class="btn-primary  mt-1 w-full">continue</Button>
+                    <div class="flex flex-row w-full px-1">
+                        <Button class="btn-primary  mt-1 w-full">Finish</Button>
                     </div>
                 </div>
             </div>
@@ -33,18 +31,16 @@
             </div>
 
             <div class="sm-tool-bar ">
-                <div class="text-main-content mb-4">How is this? Would you like it more:
+                <div class="text-main-content mb-4 w-full ml-2">Here are <span class="text-primary-content">3 additional
+                        drafts.</span>
                 </div>
-                <div class="grid w-full grid-cols-3">
-                    <ToggleCard text="holds a job" />
-                    <ToggleCard text="caretaker" />
-                    <ToggleCard text="recent illness" />
-                    <ToggleCard text="recent travel" />
-                    <ToggleCard text="Took time off" />
-                    <ToggleCard text="none apply" />
+                <div class=" grid grid-cols-3 w-full">
+                    <ToggleCard text="Draft #4" />
+                    <ToggleCard text="Draft #5" />
+                    <ToggleCard text="Draft #6" />
                 </div>
-                <div class="flex flex-row w-full">
-                    <Button class="btn-primary  mt-1 w-full">continue</Button>
+                <div class="flex flex-row w-full px-1">
+                    <Button class="btn-primary  mt-1 w-full">Finish</Button>
                 </div>
             </div>
         </div>
@@ -65,11 +61,6 @@ export default {
         Paper,
         ShareButton
     },
-    name: 'four-question',
-    methods: {
-        onClikcUpbeat() {
-            this.$router.push('/questions/3/upbeat')
-        }
-    }
+    name: 'five-question',
 }
 </script>

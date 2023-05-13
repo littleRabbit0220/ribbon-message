@@ -11,12 +11,11 @@ import { RouterLink, RouterView } from 'vue-router'
   </div>
 </template>
 <script>
-import Navbar from './components/Navbar.vue';
+import Navbar from './components/Navbar.vue'
 export default {
   components: {
-    Navbar,
+    Navbar
   },
-  name: "Question 1",
+  name: 'Question 1'
 }
 </script>
-

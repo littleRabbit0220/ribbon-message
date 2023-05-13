@@ -20,6 +20,6 @@ export default {
             this.$router.push('/questions/2');
         },
     },
-    name: 'first Question',
+    name: 'first-question',
 }
 </script>
