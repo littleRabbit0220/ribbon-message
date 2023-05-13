@@ -1,8 +1,8 @@
 <template>
-    <button :class="Class" @click="onClickShare">
+    <button :class="Class" @click="openModal">
         <slot></slot>
     </button>
-    <EmailInputModal :showModal="isModalVisible"></EmailInputModal>
+    <EmailInputModal :showModal="isModalVisible" @close="closeModal"></EmailInputModal>
 </template>
 <script>
 import EmailInputModal from './utils/EmailInputModal.vue';
@@ -21,9 +21,12 @@ export default {
         };
     },
     methods: {
-        onClickShare() {
+        openModal() {
             this.isModalVisible = true;
-        }
+        },
+        closeModal() {
+            this.isModalVisible = false;
+        },
     },
     computed: {
         Class() {
