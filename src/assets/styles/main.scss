@@ -277,12 +277,11 @@
 .share-btn {
     padding: 18px 16px;
     width: 148px;
-    z-index: 20;
     background: $primaryColor;
     border: 6px solid $whiteColor;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
     border-radius: 72px;
-    font-family:$fontFamily;
+    font-family: $fontFamily;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -353,8 +352,19 @@
         border: 0px;
     }
 }
+
 .sm-tool-bar {
     background-color: $whiteColor;
     padding: 16px 8px 16px 8px;
     box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.thanks {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: $blackColor;
+    margin-bottom: 32px;
 }
