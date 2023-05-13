@@ -13,12 +13,10 @@ export default {
       dialogVisible: true,
     }
   },
-  mounted() {
-    this.dialogVisible = this.showModal;
-  },
+  
   methods: {
     closeDialog() {
-      this.showModal = false
+      this.dialogVisible = false
     }
   }
 }
