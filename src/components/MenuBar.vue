@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="menu-bar font-small-caps absolute">
+  <div class="menu-bar font-small-caps">
     <a class="btn-back" v-on:click="goBack">
       <svg
         width="16"

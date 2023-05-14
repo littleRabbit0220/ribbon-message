@@ -190,6 +190,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
+    /* identical to box height, or 150% */
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 12px 16px 12px 16px;
@@ -364,54 +365,183 @@
 }
 
 .form-content {
-  width: 480px;
+    width: 480px;
 }
-.modal-wrapper {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+
+.primary-panel {
+    background-color: $primaryColor700;
+    padding: 29px 80px;
 }
-.modal {
-  background: #ffffff;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  padding: 16px;
+
+.paper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    background: $whiteColor;
+    z-index: 0;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+
+    .paper-piece-1 {
+        height: 33.33333%;
+        width: 100%;
+        left: 0.25px;
+        background: linear-gradient(148.6deg, rgba(0, 0, 0, 0.1) 14.3%, rgba(0, 0, 0, 0) 54.45%);
+        /* White */
+    }
+
+    .paper-piece-2 {
+        height: 33.33333%;
+        width: 100%;
+        left: 0.25px;
+        background: linear-gradient(148.6deg, rgba(0, 0, 0, 0.2) 15.21%, rgba(0, 0, 0, 0) 55.37%);
+        /* White */
+    }
+
+    .paper-piece-3 {
+        height: 33.33333%;
+        width: 100%;
+        left: 0.25px;
+        background: linear-gradient(148.6deg, rgba(0, 0, 0, 0.2) 14.3%, rgba(0, 0, 0, 0) 54.45%);
+        /* White */
+    }
+
+
+}
+
+.paper-text {
+    font-family: $fontFamily;
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    color: $blackColor;
+    z-index: 0;
+    height: 100%;
+    overflow: auto;
+    padding: 64px 48px;
+}
+
+.share-btn {
+    padding: 18px 16px;
+    width: 148px;
+    background: $primaryColor;
+    border: 6px solid $whiteColor;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 72px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $whiteColor;
+
 }
 
 @media screen and (max-width: 1024px) {
-  .btn-md {
-    font-size: 16px;
-    line-height: 24px;
-    padding: 8px 16px 8px 16px;
-  }
+    .btn-md {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 8px 16px 8px 16px;
+    }
+
+    .form-content-md {
+        width: 430px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
-  .btn-sd {
-    font-size: 12px;
-    line-height: 16px;
-    padding: 12px 16px 12px 16px;
-  }
+    .btn-sd {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 12px 16px 12px 16px;
+    }
+
+    .form-content-sd {
+        width: 350px;
+    }
+
+    .primary-panel-sd {
+        padding: 20px 8px;
+    }
+
+    .paper-text-sd {
+        padding: 64px 24px;
+    }
 }
 
 @media screen and (max-width: 640px) {
-  .btn-sm {
-    font-size: 12px;
-    line-height: 16px;
-    padding: 8px 8px 8px 8px;
-  }
+    .btn-sm {
+        font-size: 12px;
+        line-height: 16px;
+        padding: 8px 8px 8px 8px;
+    }
 
-  .nav-bar-sm {
-    padding: 12px 16px 12px 16px;
-  }
+    .nav-bar-sm {
+        padding: 12px 16px 12px 16px;
+    }
 
-  .form-content-sm {
-    width: 312px;
-  }
+    .form-content-sm {
+        width: 312px;
+    }
+
+    .primary-panel-sm {
+        padding: 20px 8px;
+    }
+
+    .paper-text-sm {
+        padding: 64px 24px;
+    }
+
+    .share-btn-sm {
+        border: 0px;
+    }
+}
+
+.sm-tool-bar {
+    background-color: $whiteColor;
+    padding: 16px 8px 16px 8px;
+    box-shadow: 0px -8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.thanks {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: $blackColor;
+    margin-bottom: 32px;
+}
+
+.input {
+    background: $whiteColor;
+    border: 1px solid $borderGrayColor;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    ::placeholder {
+        color: $grayColor;
+    }
+    &:hover{
+        border: 1px solid $blackColor;
+    }
+    &:hover::placeholder{
+        color: $darkGrayColor;
+    }
+    &:focus{
+        border: 2px solid $primaryColor;
+    }
+    &:disabled {
+        
+    }
+
 }

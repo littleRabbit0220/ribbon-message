@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { Question_One, Question_Two, Question_Three, Question_Four } from '../views/question'
+import Upbeat from '../views/question/Upbeat.vue';
 import Home from '../views/Home.vue';
+import Generate from '../views/Generate.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   mode: 'history',
@@ -30,6 +32,16 @@ const router = createRouter({
       path: '/questions/4',
       name: 'question4',
       component: Question_Four
+    },
+    {
+      path: '/questions/3/upbeat',
+      name: 'upbeat',
+      component: Upbeat,
+    },
+    {
+      path: '/questions/generate/',
+      name: 'Generate',
+      component: Generate
     }
   ]
 })
