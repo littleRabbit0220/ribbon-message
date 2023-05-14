@@ -59,7 +59,7 @@ export default {
         Paper,
         ShareButton
     },
-    name: 'Second Question',
+    name: 'Four Question',
     methods: {
         onClikcUpbeat() {
             this.$router.push('/questions/3/upbeat')

@@ -25,7 +25,7 @@ export default {
         MenuBar,
         Button
     },
-    name: 'Second Question',
+    name: 'tow-question',
     methods: {
         redirectToPage() {
             this.$router.push('/questions/3');
