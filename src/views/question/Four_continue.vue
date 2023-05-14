@@ -64,6 +64,7 @@ export default {
         onNextPage() {
             this.$router.push('/generate')
         }
+        
     }
 }
 </script>
