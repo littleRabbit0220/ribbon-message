@@ -48,11 +48,11 @@ export default {
                 <img src="/images/success.svg" alt="success" />
               </div>
               <div class="text-middle-content mb-6 text-center">For more tools like these, check out Ribbon. Ribbon is the first student CRM platform built for online adult education providers tostreamline operations and improve student retention.</div>
-              <div class="grid grid-cols-2 md:grid-rows-3 w-full">
-                <Button class="md:row-span-3 btn-primary md:mb-2 md:text-left btn-book">
+              <div class="grid grid-cols-2  w-full">
+                <Button class="btn btn-primary ">
                   Book a demo
                 </Button>
-                <Button class="md:row-span-2 btn-secondary">
+                <Button class="btn btn-secondary">
                   about ribbon
                 </Button>
               </div>

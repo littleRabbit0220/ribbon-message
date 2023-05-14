@@ -55,7 +55,9 @@ export default {
           </div>
           <div class="modal-content">
             <input type="text" class="input-text" />
-            <button type="button" class="btn btn-primary btn-share-modal  font-small-caps share-btn-modal" @click="shareDraft">share drafts</button>
+            <div class="flex justify-end">
+              <button type="button" class="btn btn-primary font-small-caps " @click="shareDraft">share drafts</button>
+            </div>
           </div>
         </div>
       </div>
@@ -85,7 +87,6 @@ export default {
 
 .input-modal .modal {
   width: 480px;
-  height: 196px;
   background-color: $whiteColor;
   transition: opacity 1s;
   position: relative;
@@ -138,7 +139,6 @@ export default {
     }
 
     button {
-      float: right;
       width: 153px;
       letter-spacing: 0.1em;
       text-align: left;

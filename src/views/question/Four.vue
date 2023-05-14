@@ -15,7 +15,7 @@
                         <ToggleCard text="none apply" />
                     </div>
                     <div class="flex flex-row w-full">
-                        <Button class="btn-primary  mt-1 w-full">continue</Button>
+                        <Button class="btn-primary  mt-1 w-full" :onClick="onNextPage">continue</Button>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                     <ToggleCard text="none apply" />
                 </div>
                 <div class="flex flex-row w-full">
-                    <Button class="btn-primary  mt-1 w-full">continue</Button>
+                    <Button class="btn-primary  mt-1 w-full" :onClick="onNextPage">continue</Button>
                 </div>
             </div>
         </div>
@@ -67,8 +67,8 @@ export default {
     },
     name: 'four-question',
     methods: {
-        onClikcUpbeat() {
-            this.$router.push('/questions/3/upbeat')
+        onNextPage() {
+            this.$router.push('/questions/4/continue')
         }
     }
 }

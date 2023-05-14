@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { Question_One, Question_Two, Question_Three, Question_Four } from '../views/question';
+import { Question_One, Question_Two, Question_Three, Question_Four, Question_Four_Continue } from '../views/question';
 import Upbeat from '../views/question/Upbeat.vue';
 import Home from '../views/Home.vue';
 import Generate from '../views/Generate.vue';
@@ -39,6 +39,11 @@ const router = createRouter({
       path: '/questions/4',
       name: 'question4',
       component: Question_Four
+    },
+    {
+      path: '/questions/4/continue',
+      name: 'questionfourcontinue',
+      component: Question_Four_Continue
     },
     {
       path: '/generate',

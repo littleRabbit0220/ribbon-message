@@ -190,6 +190,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
+  padding:12px 12px 16px 12px;
 
   &::placeholder {
     color: #acacac;
@@ -241,16 +242,7 @@
     border: 2px solid transparent;
   }
 }
-.btn-share-modal {
-  padding-left:16px !important;
-  padding-top:12px !important;
-  padding-bottom:12px !important;
-  width:120px !important;
-}
-.btn-book {
-  padding-left:57px;
-  padding-right:57px;
-}
+
 // btn-primary
 .btn-primary {
   background-color: $primaryColor;

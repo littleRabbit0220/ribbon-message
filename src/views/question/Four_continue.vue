@@ -7,10 +7,10 @@
                     <div class="text-main-content mb-4 w-full">The messaging has been updated for a leaner who hold a jobs and had recent travel.
                     </div>
                     <div class="flex flex-col justify-center">
-                        <Button class="btn-primary mb-2">
+                        <Button class="btn-primary mb-2" :onClick="onNextPage">
                             Next: See more drafts
                         </Button>
-                        <Button class="btn-secondary">
+                        <Button class="btn-secondary" :onClick="onNextPage">
                             update learner details
                         </Button>
                     </div>
@@ -34,10 +34,10 @@
                 </div>
                 <div class="grid w-full grid-cols-1">
                     <div class="flex flex-col justify-center">
-                        <Button class="btn-primary mb-2">
+                        <Button class="btn-primary mb-2" :onClick="onNextPage">
                             Next: See more drafts
                         </Button>
-                        <Button class="btn-secondary">
+                        <Button class="btn-secondary" :onClick="onNextPage">
                             update learner details
                         </Button>
                     </div>
@@ -61,8 +61,8 @@ export default {
     },
     name: 'Four Question',
     methods: {
-        onClikcUpbeat() {
-            this.$router.push('/questions/3/upbeat')
+        onNextPage() {
+            this.$router.push('/generate')
         }
     }
 }

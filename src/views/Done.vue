@@ -11,11 +11,11 @@
                     this first student CRM platform built for online adult education providera treamline operation and
                     improve student retention.
                 </div>
-                <div class="grid grid-cols-2 md:grid-rows-5 w-full">
-                    <Button class="md:row-span-3 btn-primary md:mb-2 md:text-left btn-book">
+                <div class="grid grid-cols-2 w-full">
+                    <Button class="btn-primary ">
                        Book a demo
                     </Button>
-                    <Button class="md:row-span-2 btn-secondary">
+                    <Button class=" btn-secondary">
                        about ribbon
                     </Button>
                 </div>

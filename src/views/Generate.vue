@@ -12,7 +12,7 @@
                         <ToggleCard text="DRAFT #6" />
                     </div>
                     <div class="flex flex-row w-full px-1">
-                        <Button class="btn-primary  mt-1 w-full">finish</Button>
+                        <Button class="btn-primary  mt-1 w-full" :onClick="onNextPage">finish</Button>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <ToggleCard text="DRAFT #6" />
                 </div>
                 <div class="flex flex-row w-full px-1">
-                    <Button class="btn-primary  mt-1 w-full">finish</Button>
+                    <Button class="btn-primary  mt-1 w-full" :onClick="onNextPage">finish</Button>
                 </div>
             </div>
         </div>
@@ -66,8 +66,8 @@ export default {
         }
     },
     methods: {
-        onClikcUpbeat() {
-            this.$router.push('/questions/3/upbeat')
+        onNextPage() {
+            this.$router.push('/done')
         },
         onClickShare() {
             this.isModalVisible=true;
