@@ -1,12 +1,12 @@
 @import 'values';
 
 .nav-bar {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 8px 24px 8px 24px;
-    align-items: center;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 24px 8px 24px;
+  align-items: center;
 }
 
 .text-main-content {
@@ -139,35 +139,36 @@
 }
 //font
 .font-small-caps {
-    font-family: $fontFamily;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    text-transform: uppercase;
-  }
+  font-family: $fontFamily;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
 //define text input
 .input-text {
-    border: 1px solid #d2caca;
-    border-radius: 8px;
-    color: black;
-    font-family: $fontFamily;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-    &::placeholder {
-      color: #acacac;
-    }
-    &:hover {
-      border: 1px solid #212121;
-    }
-    &:hover::placeholder {
-      color: #666666;
-    }
-    &:focus-visible {
-      border: 1px solid $primaryColor;
-      outline: none;
-    }
+  border: 1px solid #d2caca;
+  border-radius: 8px;
+  color: black;
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  &::placeholder {
+    color: #acacac;
   }
+  &:hover {
+    border: 1px solid #212121;
+  }
+  &:hover::placeholder {
+    color: #666666;
+  }
+  &:focus-visible {
+    border: 1px solid $primaryColor;
+    outline: none;
+  }
+}
+
 .toggle-card {
   padding: 2px;
   background-color: transparent;
@@ -191,200 +192,175 @@
     line-height: 24px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-<<<<<<< HEAD
     padding: 12px 16px 12px 16px;
     margin-left: 2px;
     margin-right: 2px;
     box-sizing: content-box;
     border: 2px solid transparent;
+  }
 }
 
 // btn-primary
 .btn-primary {
-    background-color: $primaryColor;
-    color: $whiteColor;
-    border: 2px solid transparent;
+  background-color: $primaryColor;
+  color: $whiteColor;
+  border: 2px solid transparent;
 
-    &:hover {
-        background-color: $primaryColor600;
-    }
+  &:hover {
+    background-color: $primaryColor600;
+  }
 
-    &:disabled {
-        opacity: 0.4;
-        background-color: $primaryColor100;
-    }
+  &:disabled {
+    opacity: 0.4;
+    background-color: $primaryColor100;
+  }
 
-    &:active {
-        border: 2px solid $primaryColor;
-        background-color: $primaryColor700;
-    }
+  &:active {
+    border: 2px solid $primaryColor;
+    background-color: $primaryColor700;
+  }
 
-    &:focus {
-        border: 2px solid $whiteColor;
-        outline: 2px solid $primaryColor;
-    }
+  &:focus {
+    border: 2px solid $whiteColor;
+    outline: 2px solid $primaryColor;
+  }
 }
 
 .btn-ghost {
+  background-color: $whiteColor;
+  color: $primaryColor;
+
+  &:hover {
+    background-color: $primaryColor100;
+  }
+
+  &:disabled {
+    opacity: 0.4;
     background-color: $whiteColor;
-    color: $primaryColor;
+  }
 
-    &:hover {
-        background-color: $primaryColor100;
-    }
+  &:active {
+    background-color: $primaryColor100;
+  }
 
-    &:disabled {
-        opacity: 0.4;
-        background-color: $whiteColor;
-    }
-
-    &:active {
-        background-color: $primaryColor100;
-    }
-
-    &:focus {
-        border: 2px solid $primaryColor;
-        outline: 2px solid $whiteColor;
-    }
+  &:focus {
+    border: 2px solid $primaryColor;
+    outline: 2px solid $whiteColor;
+  }
 }
 
 .btn-secondary {
+  background-color: $whiteColor;
+  color: $primaryColor600;
+  border: 1px solid $primaryColor;
+
+  &:hover {
+    background-color: $primaryColor100;
+  }
+
+  &:active {
+    border: 2px solid #3d3593;
+    background-color: $primaryColor100;
+    color: $whiteColor;
+  }
+
+  &:disabled {
+    opacity: 0.4;
     background-color: $whiteColor;
-    color: $primaryColor600;
-    border: 1px solid $primaryColor;
+  }
 
-    &:hover {
-        background-color: $primaryColor100;
-    }
-
-    &:active {
-        border: 2px solid #3D3593;
-        background-color: $primaryColor100;
-        color: $whiteColor;
-    }
-
-    &:disabled {
-        opacity: 0.4;
-        background-color: $whiteColor;
-    }
-
-    &:focus {
-        border: 2px solid white;
-        outline: 2px solid $primaryColor;
-    }
+  &:focus {
+    border: 2px solid white;
+    outline: 2px solid $primaryColor;
+  }
 }
 
 .btn-gray {
+  background-color: $whiteColor;
+  color: $darkGrayColor;
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: $borderGrayColor;
+    color: $blackColor;
+  }
+
+  &:active {
+    border: 2px solid #3d3593;
+    background-color: $grayColor;
+    color: $blackColor;
+  }
+
+  &:disabled {
+    opacity: 0.4;
     background-color: $whiteColor;
     color: $darkGrayColor;
-    border: 2px solid transparent;
+  }
 
-    &:hover {
-        background-color: $borderGrayColor;
-        color: $blackColor;
-    }
-
-    &:active {
-        border: 2px solid #3D3593;
-        background-color: $grayColor;
-        color: $blackColor;
-    }
-
-    &:disabled {
-        opacity: 0.4;
-        background-color: $whiteColor;
-        color: $darkGrayColor;
-    }
-
-    &:focus {
-        background-color: $whiteColor;
-        color: darkgray;
-        border: 2px solid $primaryColor;
-    }
+  &:focus {
+    background-color: $whiteColor;
+    color: darkgray;
+    border: 2px solid $primaryColor;
+  }
 }
 
 .toggle-card {
-    padding: 2px;
-    background-color: transparent;
-    border-radius: 12px;
-    box-sizing: border-box;
-    border: 2px solid transparent;
+  padding: 2px;
+  background-color: transparent;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
 
-    .card {
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        background-color: $whiteColor;
-        padding: 16px 24px;
-        border: 1px solid rgba(0, 0, 0, 0.12);
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-        font-family: $fontFamily;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: $primaryColor;
-        box-sizing: border-box;
-
-        &:hover {
-            border: 1px solid $primaryColor;
-            background-color: $primaryColor100;
-        }
-
-        &:active {
-            border: 1px solid transparent;
-            background-color: $whiteColor;
-        }
-        &:focus {
-            background-color: $primaryColor;
-            color: $whiteColor;
-        }  
-=======
+  .card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $whiteColor;
+    padding: 16px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: $primaryColor;
     box-sizing: border-box;
+
     &:hover {
       border: 1px solid $primaryColor;
       background-color: $primaryColor100;
->>>>>>> 69db68f (modal is adding.)
     }
-    
+
     &:active {
       border: 1px solid transparent;
       background-color: $whiteColor;
     }
-  }
-  &:active {
-    border-color: $primaryColor;
+    &:focus {
+      background-color: $primaryColor;
+      color: $whiteColor;
+    }
   }
 
-<<<<<<< HEAD
-    @media screen and (max-width: 640px) {
-        .card-sm {
-            padding: 8px;
-        }
-    }
+  &:active {
+    border: 1px solid transparent;
+    background-color: $whiteColor;
+  }
 }
 
 .text-area {
-    padding: 12px 16px;
-    border: 1px solid #D2CACA;
-    border-radius: 8px;
-    height: 200px;
-    word-wrap: break-word;
-    word-break: break-all;
-    box-shadow: 0 0 0 2px $primaryColor;
-=======
-  @media screen and (max-width: 640px) {
-    .card-sm {
-      padding: 8px;
-    }
-  }
->>>>>>> 69db68f (modal is adding.)
+  padding: 12px 16px;
+  border: 1px solid #d2caca;
+  border-radius: 8px;
+  height: 200px;
+  word-wrap: break-word;
+  word-break: break-all;
+  box-shadow: 0 0 0 2px $primaryColor;
 }
 
 .form-content {
