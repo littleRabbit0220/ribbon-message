@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { Question_One, Question_Two, Question_Three, Question_Four, Question_Five } from '../views/question'
+import { Question_One, Question_Two, Question_Three, Question_Four } from '../views/question';
 import Upbeat from '../views/question/Upbeat.vue';
 import Home from '../views/Home.vue';
-import Generate from '../views/Generate.vue'
+import Generate from '../views/Generate.vue';
+import Done from '../views/Done.vue';
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   mode: 'history',
@@ -39,14 +41,14 @@ const router = createRouter({
       component: Upbeat,
     },
     {
-      path: '/questions/5',
-      name: 'question5',
-      component: Question_Five
+      path: '/generate',
+      name: 'generate',
+      component: Generate
     },
     {
-      path: '/questions/generate/',
-      name: 'Generate',
-      component: Generate
+      path: '/done',
+      name: 'done',
+      component: Done
     }
   ]
 })

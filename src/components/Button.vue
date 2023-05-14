@@ -14,7 +14,7 @@ export default {
     },
     computed: {
         Class() {
-            return "btn btn-md btn-sd btn-sm " + this.class;
+            return "btn " + this.class;
         }
     }
 
