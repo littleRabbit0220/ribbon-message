@@ -26,6 +26,11 @@ const router = createRouter({
       component: Question_Two
     },
     {
+      path: '/questions/3/upbeat',
+      name: 'upbeat',
+      component: Upbeat,
+    },
+    {
       path: '/questions/3',
       name: 'question3',
       component: Question_Three
@@ -34,11 +39,6 @@ const router = createRouter({
       path: '/questions/4',
       name: 'question4',
       component: Question_Four
-    },
-    {
-      path: '/questions/3/upbeat',
-      name: 'upbeat',
-      component: Upbeat,
     },
     {
       path: '/generate',

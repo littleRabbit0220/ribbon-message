@@ -1,5 +1,5 @@
 <template>
-    <button :class="Class">
+    <button :class="Class" :onClick="this.onClick">
         <slot></slot>
     </button>
 </template>
@@ -10,6 +10,10 @@ export default {
         class: {
             type: String,
             default: "",
+        },
+        onClick : {
+            type: Function,
+            default: null
         }
     },
     computed: {
