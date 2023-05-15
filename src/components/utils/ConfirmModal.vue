@@ -17,7 +17,12 @@ export default {
         closeDialog() {
             this.dialogVisible = false;
             this.$emit('close');
-        }
+        },
+
+        redierctToStartPage() {
+            this.$router.push('/questions/1');
+
+        },
     },
     watch: {
         showModal(newValue) {
@@ -40,12 +45,13 @@ export default {
                     <div class="modal-content">
                         <div class="grid grid-cols-1 w-full">
                             <div class="text-main-content mb-2"><b>Are you sure you’d like to start over?</b></div>
-                            <div class="text-middle-content mb-6">You will lose all of the drafts you hve curently made. If you
+                            <div class="text-middle-content mb-6">You will lose all of the drafts you hve curently made. If
+                                you
                                 want, you can <b>share</b> your current drafts using the button on the bottom right before
                                 continuing on with a clean slate.</div>
                             <div class="grid grid-cols-2 w-full">
                                 <button type="button" class=" btn btn-secondary  font-small-caps ">Nevermind!</button>
-                                <button type="button" class="  btn btn-primary  font-small-caps ">Start over</button>
+                                <button type="button" class="  btn btn-primary  font-small-caps" :onClick="redierctToStartPage">Start over</button>
                             </div>
                         </div>
                     </div>
@@ -111,4 +117,5 @@ export default {
             align-items: center;
         }
     }
-}</style>
+}
+</style>
