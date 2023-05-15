@@ -17,7 +17,6 @@ export default {
     },
     methods: {
         redierctToPageTwo(value) {
-            console.log(value)
             this.$router.push({
                 name: 'question2',
                 query: {

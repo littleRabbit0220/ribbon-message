@@ -2,7 +2,7 @@
     <div class="flex flex-col grow">
         <MenuBar />
         <div :class="['w-full flex grow grid', {'md:grid-cols-2 sm:gird-cols-1' : isGenerating, 'md:grid-cols-1 sm:gird-cols-1' : !isGenerating }]">
-            <div :class="['relative md:flex flex-col grow justify-center items-center', {'sm:hidden' : isGenerating, 'sm:flex flex' : !isGenerating }]">
+            <div :class="['relative md:flex flex-col grow justify-center items-center', {'sm:hidden hidden' : isGenerating, 'sm:flex flex' : !isGenerating }]">
                 <div class="form-content form-content-sm">
                     <div class="text-main-content mb-4 w-full">Given their situation, what would you request the learner do
                         next?
@@ -48,12 +48,12 @@ export default {
         redirectToPage() {
             //this.$router.push('/questions/3');
         },
-        async draftClick() {
+        draftClick() {
             const question1 = this.$route.query.question1;
             this.isGenerating = true;
             this.answer = generateAnswer(`For ${question1}, ${this.question2}`).then(res => {
                 this.isGenerating = false;
-                this.$store.dispatch('setAnswer1', res);
+                this.$store.dispatch('setDraft1', res);
                 this.$router.push('/questions/3');
             }).catch(err => {
                 this.isGenerating = false;
