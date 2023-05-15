@@ -9,24 +9,24 @@
                     <div class="flex flex-col justify-center">
                         <ToggleCard text="professional" icon="/images/professional.svg" />
                         <ToggleCard text="supportive" icon="/images/supportive.svg" />
-                        <ToggleCard text="upbeat" icon="/images/upbeat.svg" :onClick="onClikcUpbeat"/>
+                        <ToggleCard text="upbeat" icon="/images/upbeat.svg" :onClick="onClikcUpbeat" />
                         <ToggleCard text="looks good" icon="/images/looksgood.svg" />
                     </div>
                 </div>
             </div>
             <div class="primary-panel primary-panel-sd primary-panel-sm">
-                <Paper />
+                <Paper :content="answer" />
             </div>
         </div>
         <div class=" md:hidden sm:block w-full fixed bottom-0 ">
             <div class="flex justify-end">
                 <ShareButton class="share-btn-sm mb-6 mr-6">
-                <div class="flex">
-                    <img src="/images/messageBox.svg" class="mr-2" alt="share" /> SHARE
-                </div>
-            </ShareButton>
+                    <div class="flex">
+                        <img src="/images/messageBox.svg" class="mr-2" alt="share" /> SHARE
+                    </div>
+                </ShareButton>
             </div>
-          
+
             <div class="sm-tool-bar ">
                 <div class="text-main-content mb-4">How is this? Would you like it more:
                 </div>
@@ -68,6 +68,11 @@ export default {
         onClikcUpbeat() {
             this.$router.push('/questions/3/upbeat')
         }
-    }
+    },
+    computed: {
+        answer() {
+            return this.$store.state.answer1;
+        }
+    },
 }
 </script>

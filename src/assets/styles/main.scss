@@ -255,7 +255,8 @@
 
   &:disabled {
     opacity: 0.4;
-    background-color: $primaryColor100;
+    background-color: $primaryColor;
+    cursor: not-allowed;
   }
 
   &:active {
@@ -525,10 +526,13 @@
 
   &:focus {
     border: 2px solid $primaryColor;
+    z-index: 10;
   }
+}
 
-  &:disabled {}
-
+.disable-panel {
+  background-color: $whiteColor;
+  opacity: 0.3;
 }
 
 @media screen and (max-width: 1024px) {
@@ -606,4 +610,8 @@
   .share-btn-sm {
     border:0px;
   }
+}
+
+.loading-panel {
+  background-color: $primaryColor700;
 }

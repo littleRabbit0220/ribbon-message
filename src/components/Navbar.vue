@@ -1,7 +1,7 @@
 <template>
     <nav>
         <div class="nav-bar nav-bar-sm">
-            <a href="#"><span>
+            <a href="https://www.ribbonedu.com/" target="_blank"><span>
                 <img src='@/assets/icons/logo.svg' alt="ribbon education"/>
             </span>
             </a>

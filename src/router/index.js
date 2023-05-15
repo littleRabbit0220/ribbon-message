@@ -18,12 +18,13 @@ const router = createRouter({
     {
       path: '/questions/1',
       name: 'question1',
-      component: Question_One
+      component: Question_One,
     },
     {
       path: '/questions/2',
       name: 'question2',
-      component: Question_Two
+      component: Question_Two,
+      props: (route) => ({ question1: route.query.question1})
     },
     {
       path: '/questions/3/upbeat',
@@ -33,7 +34,7 @@ const router = createRouter({
     {
       path: '/questions/3',
       name: 'question3',
-      component: Question_Three
+      component: Question_Three,
     },
     {
       path: '/questions/4',
