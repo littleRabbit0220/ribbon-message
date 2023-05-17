@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { Question_One, Question_Two, Question_Three, Question_Four, Question_Four_Continue } from '../views/question';
-import Upbeat from '../views/question/Upbeat.vue';
+import { Question_One, Question_Two, Question_Three, Question_Four } from '../views/question';
+import Draft2 from '../views/question/Draft2.vue';
+import Draft3 from '../views/question/Draft3.vue';
 import Home from '../views/Home.vue';
 import Generate from '../views/Generate.vue';
 import Done from '../views/Done.vue';
@@ -27,9 +28,9 @@ const router = createRouter({
       props: (route) => ({ question1: route.query.question1})
     },
     {
-      path: '/questions/3/upbeat',
-      name: 'upbeat',
-      component: Upbeat,
+      path: '/questions/3/draft2/:question',
+      name: 'draft2',
+      component: Draft2,
     },
     {
       path: '/questions/3',
@@ -42,12 +43,12 @@ const router = createRouter({
       component: Question_Four
     },
     {
-      path: '/questions/4/continue',
-      name: 'questionfourcontinue',
-      component: Question_Four_Continue
+      path: '/questions/4/draft3/:selected',
+      name: 'draft3',
+      component: Draft3
     },
     {
-      path: '/generate',
+      path: '/generate_three_version',
       name: 'generate',
       component: Generate
     },

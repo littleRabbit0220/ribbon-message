@@ -398,6 +398,64 @@
   }
 }
 
+.check-card {
+  padding: 2px;
+  background-color: transparent;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+
+  .card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $whiteColor;
+    padding: 16px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $primaryColor;
+    box-sizing: border-box;
+
+    &:hover {
+      border: 1px solid $primaryColor;
+      background-color: $primaryColor100;
+      color: $primaryColor;
+    }
+
+    &:active {
+      border: 1px solid transparent;
+      background-color: $whiteColor;
+    }
+    &:disabled {
+      opacity: 0.4;
+      background-color: $whiteColor;
+      color: $primaryColor;
+      z-index: -1;
+      cursor: not-allowed;
+    }
+  }
+  &:disabled {
+    opacity: 0.4;
+    background-color: $whiteColor;
+    color: $primaryColor;
+    cursor: not-allowed;
+  }
+  .selected {
+    background-color: $primaryColor700;
+    color: $whiteColor,
+  }
+}
+
 .text-area {
   padding: 12px 16px;
   border: 1px solid #d2caca;
@@ -532,7 +590,7 @@
 
 .disable-panel {
   background-color: $whiteColor;
-  opacity: 0.3;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 1024px) {
@@ -584,6 +642,14 @@
    }
 
   .toggle-card{
+    .card {
+      font-size: 12px;
+      line-height: 16px;
+      padding: 8px 8px 8px 8px;
+    }
+  }
+
+  .check-card{
     .card {
       font-size: 12px;
       line-height: 16px;

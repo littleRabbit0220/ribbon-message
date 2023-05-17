@@ -2,15 +2,22 @@
     <div class="w-full h-full relative">
 
         <div class="absolute paper-text paper-text-sd paper-text-sm">
-            <b>
-                Draft #1
-            </b><br/>
-            <b>
-                Subject: Tardiness to class<br/>
-            </b>
-            Dear [Student Name],<br/>
-           {{
-                this.content 
+            <div class="mb-3">
+                <b>
+                    Draft #{{ draftNum }}
+                </b><br/>
+                <span :v-if="mode.length>0">
+                    ◦more {{ mode }}
+                </span>
+            </div>
+            <div class="mb-3">
+                <b>
+                    Subject: Tardiness to class<br />
+                </b>
+            </div>
+            Dear [Student Name],<br />
+            {{
+                this.content
             }}
         </div>
         <ShareButton class="absolute md:block bottom-6 right-6 share-btn-sm sm:hidden hidden">
@@ -32,6 +39,14 @@ export default {
         content: {
             type: String,
             default: ''
+        },
+        draftNum: {
+            type: String,
+            default: 1
+        },
+        mode: {
+            type: String,
+            default: ""
         }
     },
     components: {
