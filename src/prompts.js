@@ -37,18 +37,20 @@ Do not use the phrase "I hope this email finds you well."`
 export const PROMPT_ONE = (question1, question2) => {
     if(question1.toUpperCase() === MISSED_ASSIGNMENTS) return PROMPT_ONE_MISSED_ASSIGNMENTS(question2);
     else if(question1.toUpperCase() === BEEN_ABSENT_FROM_CLASS) return PROMPT_ONE_BEEN_ABSENT_FROM_CLASS(question2);
-    else if(question1.toUpperCase() ===BEEN_LATE_TO_CLASS) return PROMPT_ONE_BEEN_LATE_TO_CLASS(question2);
-    else if(question1.toUpperCase() ===A_CONCERNING_GRADE) return PROMPT_ONE_A_CONCERNING_GRADE(question2);
+    else if(question1.toUpperCase() === BEEN_LATE_TO_CLASS) return PROMPT_ONE_BEEN_LATE_TO_CLASS(question2);
+    else if(question1.toUpperCase() === A_CONCERNING_GRADE) return PROMPT_ONE_A_CONCERNING_GRADE(question2);
 }
 //------------------------------------------------------------------------------
-export const PROMPT_TWO = (tone) => {
-    return  `Rewrite answer about  in a more ${tone} tone `
+export const PROMPT_TWO = (draft ,tone) => {
+    return  `Rewrite answer about answer "${draft}" in a more ${tone} tone  `
 }
 //--------------------------------------------------------------------------------
-export const PROMPT_THREE = (selection) => {
-    let prompt = "";
-    selection.forEach( item => prompt += `Update the email knowing that the learner ${item}.`);
+export const PROMPT_THREE = (draft, selection) => {
+    let prompt = `email: "${draft}"\n Update the above email knowing that the learner `;
+    selection.forEach( item => prompt += `${item}, `);
     return prompt;
 }
 //--------------------------------------------------------------------------------
-export const PROMPT_FOUR = "Now give me 3 versions of the above email varying by tone, length and level of detail";
+export const PROMPT_FOUR = (draft) => {
+    return `Now give me 3 versions of the email "${draft}" varying by tone, length and level of detail. In the end of each part, insert $ symbol`;
+}

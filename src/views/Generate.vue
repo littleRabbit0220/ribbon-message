@@ -104,8 +104,11 @@ export default {
         // const Query1 = "How to teach the students without homework";
         // const Query2 = "How to study the maths without lesson";
         // const Query3 = "How to teach the students using computer";
-        generateAnswer(PROMPT_FOUR).then(res => {
-            this.$store.dispatch('setDraft4', res);
+        generateAnswer(PROMPT_FOUR(this.$store.state.draft3)).then(res => {
+            let part = res.split('$');
+            this.$store.dispatch('setDraft4', part[0]);
+            this.$store.dispatch('setDraft5', part[1]);
+            this.$store.dispatch('setDraft6', part[2]);
             this.selected_draft = res;
             this.isGenerating = false;
             // generateAnswer(`${Query2}`).then(res => {

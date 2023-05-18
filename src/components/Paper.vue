@@ -15,7 +15,6 @@
                     Subject: Tardiness to class<br />
                 </b>
             </div>
-            Dear [Student Name],<br />
             {{
                 this.content
             }}

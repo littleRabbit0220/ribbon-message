@@ -87,7 +87,7 @@ export default {
         makeDraft2(tone) {
             this.isGenerating = true;
             if (tone !="looks_good") {
-                const prompt = PROMPT_TWO(tone);
+                const prompt = PROMPT_TWO( this.$store.state.draft1 ,tone);
                 this.answer = generateAnswer(prompt).then(res => {
                     this.isGenerating = false;
                     this.$store.dispatch('setDraft2', res);
