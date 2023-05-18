@@ -126,7 +126,7 @@ export default {
                 });
             } else {
                 this.$router.push(`/generate_three_version`);
-                this.$store.dispatch('setDraft3', this.$store.state.draft3)
+                this.$store.dispatch('setDraft3', this.$store.state.draft2)
             }
         }
 
