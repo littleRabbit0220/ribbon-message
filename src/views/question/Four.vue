@@ -115,7 +115,7 @@ export default {
         makeDraft3() {
             this.isGenerating = true;
             if (this.noApplyDisabled) {
-                const prompt = PROMPT_THREE(this.selected);
+                const prompt = PROMPT_THREE( this.$store.state.draft2 ,this.selected);
                 this.answer = generateAnswer(`For ${prompt}`).then(res => {
                     this.isGenerating = false;
                     this.$store.dispatch('setDraft3', res);
