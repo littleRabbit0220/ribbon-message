@@ -35,13 +35,13 @@
                 </div>
                 <div class="grid w-full grid-cols-2">
                     <div class="m-1">
-                        <ToggleCard text="professional" icon="/images/professional.svg" @click="makeDraft2('professional')"/>
+                        <ToggleCard text="professional" icon="/images/professional.svg" @click="makeDraft2(professional)"/>
                     </div>
                     <div class="m-1">
-                        <ToggleCard text="supportive" icon="/images/supportive.svg" @click="makeDraft2('supportive')"/>
+                        <ToggleCard text="supportive" icon="/images/supportive.svg" @click="makeDraft2(supportive)"/>
                     </div>
                     <div class="m-1">
-                        <ToggleCard text="upbeat" icon="/images/upbeat.svg" @click="makeDraft2('upbeat')"/>
+                        <ToggleCard text="upbeat" icon="/images/upbeat.svg" @click="makeDraft2(upbeat)"/>
                     </div>
                     <div class="m-1">
                         <ToggleCard text="looks good" icon="/images/looksgood.svg" @click="makeDraft2('looks_good')"/>
@@ -62,6 +62,8 @@ import ShareButton from '../../components/ShareButton.vue';
 import generateAnswer from '../../actions/generate';
 import DisablePanel from '../../components/utils/DisablePanel.vue';
 import LoadingPanel from '../../components/utils/LoadingPanel.vue';
+import { PROFESSIONAL, SUPPORTIVE, UPBEAT } from '../../prompts';
+import { PROMPT_TWO } from '../../prompts';
 export default {
     components: {
         ToggleCard,
@@ -75,18 +77,21 @@ export default {
     name: 'three-question',
     data() {
         return {
+            professional: PROFESSIONAL,
+            supportive: SUPPORTIVE,
+            upbeat: UPBEAT,
             isGenerating: false,
         }
     },
     methods: {
-        makeDraft2(question) {
-            const question3 = question;
+        makeDraft2(tone) {
             this.isGenerating = true;
-            if (question3 !="looks_good") {
-                this.answer = generateAnswer(`For ${question3}`).then(res => {
+            if (tone !="looks_good") {
+                const prompt = PROMPT_TWO(tone);
+                this.answer = generateAnswer(prompt).then(res => {
                     this.isGenerating = false;
                     this.$store.dispatch('setDraft2', res);
-                    this.$router.push(`/questions/3/draft2/${question}`);
+                    this.$router.push(`/questions/3/draft2/${tone}`);
                 }).catch(err => {
                     this.isGenerating = false;
                     console.log(err)

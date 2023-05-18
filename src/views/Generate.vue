@@ -59,6 +59,7 @@ import ShareButton from '../components/ShareButton.vue';
 import generateAnswer from '../actions/generate';
 import DisablePanel from '../components/utils/DisablePanel.vue';
 import LoadingPanel from '../components/utils/LoadingPanel.vue';
+import { PROMPT_FOUR } from '../prompts';
 export default {
     components: {
         ToggleCard,
@@ -100,26 +101,27 @@ export default {
     },
     mounted() {
         this.isGenerating = true;
-        const Query1 = "How to teach the students without homework";
-        const Query2 = "How to study the maths without lesson";
-        const Query3 = "How to teach the students using computer";
-        generateAnswer(`${Query1}`).then(res => {
+        // const Query1 = "How to teach the students without homework";
+        // const Query2 = "How to study the maths without lesson";
+        // const Query3 = "How to teach the students using computer";
+        generateAnswer(PROMPT_FOUR).then(res => {
             this.$store.dispatch('setDraft4', res);
             this.selected_draft = res;
-            generateAnswer(`${Query2}`).then(res => {
-                this.$store.dispatch('setDraft5', res);
-                generateAnswer(`${Query3}`).then(res => {
-                    this.$store.dispatch('setDraft6', res);
-                    this.isGenerating = false;
+            this.isGenerating = false;
+            // generateAnswer(`${Query2}`).then(res => {
+            //     this.$store.dispatch('setDraft5', res);
+            //     generateAnswer(`${Query3}`).then(res => {
+            //         this.$store.dispatch('setDraft6', res);
+            //         this.isGenerating = false;
 
-                }).catch(err => {
-                    this.isGenerating = false;
-                    console.log(err)
-                })
-            }).catch(err => {
-                this.isGenerating = false;
-                console.log(err)
-            })
+            //     }).catch(err => {
+            //         this.isGenerating = false;
+            //         console.log(err)
+            //     })
+            // }).catch(err => {
+            //     this.isGenerating = false;
+            //     console.log(err)
+            // })
         }).catch(err => {
             this.isGenerating = false;
             console.log(err)

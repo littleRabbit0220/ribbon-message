@@ -45,16 +45,16 @@
                 <div class="text-main-content mb-4">How is this? Would you like it more:
                 </div>
                 <div class="grid w-full grid-cols-3">
-                    <CheckCard text="holds a job" :isSelected="selected.includes('holds a job')"
-                        :disabled="otherCardDisabled" @click="select('holds a job')" />
-                    <CheckCard text="caretaker" :isSelected="selected.includes('caretaker')" :disabled="otherCardDisabled"
-                        @click="select('caretaker')" />
-                    <CheckCard text="recent illness" :isSelected="selected.includes('recent illness')"
-                        :disabled="otherCardDisabled" @click="select('recent illness')" />
-                    <CheckCard text="recent travel" :isSelected="selected.includes('recent travel')"
-                        :disabled="otherCardDisabled" @click="select('recent travel')" />
-                    <CheckCard text="Took time off" :isSelected="selected.includes('Took time off')"
-                        :disabled="otherCardDisabled" @click="select('Took time off')" />
+                    <CheckCard text="holds a job" :isSelected="selected.includes(hold_a_job)"
+                        :disabled="otherCardDisabled" @click="select(hold_a_job)" />
+                    <CheckCard text="caretaker" :isSelected="selected.includes(caretaker)" :disabled="otherCardDisabled"
+                        @click="select(caretaker)" />
+                    <CheckCard text="recent illness" :isSelected="selected.includes(recent_illness)"
+                        :disabled="otherCardDisabled" @click="select(recent_illness)" />
+                    <CheckCard text="recent travel" :isSelected="selected.includes(recent_travel)"
+                        :disabled="otherCardDisabled" @click="select(recent_travel)" />
+                    <CheckCard text="Took time off" :isSelected="selected.includes(took_time_off)"
+                        :disabled="otherCardDisabled" @click="select(took_time_off)" />
                     <CheckCard text="none apply" :isSelected="selected.includes('none apply')" :disabled="noApplyDisabled"
                         @click="select('none apply')" />
                 </div>
@@ -78,6 +78,7 @@ import ShareButton from '../../components/ShareButton.vue';
 import DisablePanel from '../../components/utils/DisablePanel.vue';
 import LoadingPanel from '../../components/utils/LoadingPanel.vue';
 import generateAnswer from '../../actions/generate';
+import { HOLD_A_JOB, CARETAKER, RECENT_ILLNESS, RECENT_TRAVEL, TOOK_TIME_OFF, PROMPT_THREE } from '../../prompts';
 export default {
     components: {
         MenuBar,
@@ -93,6 +94,11 @@ export default {
         return {
             selected: [],
             isGenerating: false,
+            hold_a_job: HOLD_A_JOB,
+            caretaker: CARETAKER,
+            recent_illness: RECENT_ILLNESS,
+            recent_travel: RECENT_TRAVEL,
+            took_time_off: TOOK_TIME_OFF,
         }
     },
     methods: {
@@ -109,12 +115,11 @@ export default {
         makeDraft3() {
             this.isGenerating = true;
             if (this.noApplyDisabled) {
-                let question4 = '';
-                this.selected.forEach( item => question4 += item + ",");
-                this.answer = generateAnswer(`For ${question4}`).then(res => {
+                const prompt = PROMPT_THREE(this.selected);
+                this.answer = generateAnswer(`For ${prompt}`).then(res => {
                     this.isGenerating = false;
                     this.$store.dispatch('setDraft3', res);
-                    this.$router.push(`/questions/4/draft3/${question4}`);
+                    this.$router.push(`/questions/4/draft3/${prompt}`);
                 }).catch(err => {
                     this.isGenerating = false;
                     console.log(err)
