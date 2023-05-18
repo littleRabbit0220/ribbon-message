@@ -1,8 +1,10 @@
 <template>
     <div class="flex flex-col grow">
         <MenuBar />
-        <div :class="['w-full flex grow grid', {'md:grid-cols-2 sm:gird-cols-1' : isGenerating, 'md:grid-cols-1 sm:gird-cols-1' : !isGenerating }]">
-            <div :class="['relative md:flex flex-col grow justify-center items-center', {'sm:hidden hidden' : isGenerating, 'sm:flex flex' : !isGenerating }]">
+        <div
+            :class="['w-full flex grow grid', { 'md:grid-cols-2 sm:gird-cols-1': isGenerating, 'md:grid-cols-1 sm:gird-cols-1': !isGenerating }]">
+            <div
+                :class="['relative md:flex flex-col grow justify-center items-center', { 'sm:hidden hidden': isGenerating, 'sm:flex flex': !isGenerating }]">
                 <div class="form-content form-content-sm">
                     <div class="text-main-content mb-4 w-full">Given their situation, what would you request the learner do
                         next?
@@ -16,9 +18,9 @@
                         </Button>
                     </div>
                 </div>
-                <DisablePanel v-if="isGenerating"/>
+                <DisablePanel v-if="isGenerating" />
             </div>
-            <LoadingPanel v-if="isGenerating"/>
+            <LoadingPanel v-if="isGenerating" />
         </div>
 
     </div>
@@ -29,6 +31,7 @@ import Button from '../../components/Button.vue';
 import generateAnswer from '../../actions/generate';
 import LoadingPanel from '../../components/utils/LoadingPanel.vue';
 import DisablePanel from '../../components/utils/DisablePanel.vue';
+import { PROMPT_ONE } from '../../prompts';
 export default {
     data() {
         return {
@@ -51,7 +54,8 @@ export default {
         draftClick() {
             const question1 = this.$route.query.question1;
             this.isGenerating = true;
-            this.answer = generateAnswer(`For ${question1}, ${this.question2}`).then(res => {
+            const prompt = PROMPT_ONE(question1, this.question2);
+            this.answer = generateAnswer(prompt).then(res => {
                 this.isGenerating = false;
                 this.$store.dispatch('setDraft1', res);
                 this.$router.push('/questions/3');
