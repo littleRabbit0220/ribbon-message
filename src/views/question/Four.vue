@@ -116,17 +116,19 @@ export default {
             this.isGenerating = true;
             if (this.noApplyDisabled) {
                 const prompt = PROMPT_THREE( this.$store.state.draft2 ,this.selected);
-                this.answer = generateAnswer(`For ${prompt}`).then(res => {
+                let _selected="";
+                this.selected.forEach( item => _selected +=item);
+                this.answer = generateAnswer(`${prompt}`).then(res => {
                     this.isGenerating = false;
                     this.$store.dispatch('setDraft3', res);
-                    this.$router.push(`/questions/4/draft3/${prompt}`);
+                    this.$router.push(`/questions/4/draft3/${_selected}`);
                 }).catch(err => {
                     this.isGenerating = false;
                     console.log(err)
                 });
             } else {
-                this.$router.push(`/generate_three_version`);
                 this.$store.dispatch('setDraft3', this.$store.state.draft2)
+                this.$router.push(`/generate_three_version`);
             }
         }
 

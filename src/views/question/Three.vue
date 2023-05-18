@@ -97,8 +97,8 @@ export default {
                     console.log(err)
                 });
             } else {
-                this.$router.push(`/questions/3/draft2/${question}`);
                 this.$store.dispatch('setDraft2', this.$store.state.draft1)
+                this.$router.push(`/questions/3/draft2/${tone}`);
             }
         }
     },

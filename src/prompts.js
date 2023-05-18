@@ -46,11 +46,11 @@ export const PROMPT_TWO = (draft ,tone) => {
 }
 //--------------------------------------------------------------------------------
 export const PROMPT_THREE = (draft, selection) => {
-    let prompt = `email: "${draft}"\n Update the above email knowing that the learner `;
+    let prompt = `"${draft}"\n Update the above email knowing that the learner `;
     selection.forEach( item => prompt += `${item}, `);
     return prompt;
 }
 //--------------------------------------------------------------------------------
 export const PROMPT_FOUR = (draft) => {
-    return `Now give me 3 versions of the email "${draft}" varying by tone, length and level of detail. In the end of each part, insert $ symbol`;
+    return `Now give me 3 versions of the email "${draft}" varying by tone, length and level of detail. In the end of each version, insert $ symbol`;
 }
