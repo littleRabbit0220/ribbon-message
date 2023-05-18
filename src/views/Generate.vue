@@ -109,7 +109,7 @@ export default {
             this.$store.dispatch('setDraft4', part[0]);
             this.$store.dispatch('setDraft5', part[1]);
             this.$store.dispatch('setDraft6', part[2]);
-            this.selected_draft = res;
+            this.selected_draft = part[0];
             this.isGenerating = false;
             // generateAnswer(`${Query2}`).then(res => {
             //     this.$store.dispatch('setDraft5', res);
