@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="primary-panel primary-panel-sd primary-panel-sm">
-                <Paper :content="draft" draftNum="2" :mode="mode"/>
+                <Paper :content="draft" draftNum="2" :subject="subject" :mode="mode"/>
             </div>
         </div>
         <div class=" md:hidden sm:block w-full fixed bottom-0 ">
@@ -62,10 +62,17 @@ export default {
     name: 'Second Question',
     methods: {
         onNextPage() {
-            this.$router.push('/questions/4')
+            this.$router.push({
+                path: '/questions/4',
+                query: {
+                    question1: this.$route.query.question1,
+                    question2: this.$route.query.question2,
+                    question3: this.$route.params.question
+                }
+            });
         },
         chooseDifferentTone() {
-            this.$router.push('/questions/3');
+            this.$router.go(-1);
         }
     },
     computed: {
@@ -74,6 +81,9 @@ export default {
         },
         mode() {
             return this.$route.params.question;
+        },
+        subject() {
+            return this.$route.query.question1;
         }
     },
 }
