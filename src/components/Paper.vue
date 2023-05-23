@@ -6,13 +6,13 @@
                 <b>
                     Draft #{{ draftNum }}
                 </b><br/>
-                <span :v-if="mode.length>0">
-                    ◦more {{ mode }}
+                <span v-if="mode.length>0">
+                    ◦more <b>{{ mode }}</b>
                 </span>
             </div>
             <div class="mb-3">
                 <b>
-                    Subject: Tardiness to class<br />
+                    Subject: {{subject}}<br />
                 </b>
             </div>
             {{
@@ -46,6 +46,10 @@ export default {
         mode: {
             type: String,
             default: ""
+        },
+        subject: {
+            type: String, 
+            default: ''
         }
     },
     components: {

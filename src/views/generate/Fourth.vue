@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div v-if="!isGenerating" class="primary-panel primary-panel-sd primary-panel-sm">
-                <Paper :content="draft" draftNum="3" :mode="mode" />
+                <Paper :content="draft" draftNum="3" :mode="mode" :subject="subject"/>
             </div>
             <LoadingPanel v-if="isGenerating" />
         </div>
@@ -121,14 +121,28 @@ export default {
                 this.answer = generateAnswer(`${prompt}`).then(res => {
                     this.isGenerating = false;
                     this.$store.dispatch('setDraft3', res);
-                    this.$router.push(`/questions/4/draft3/${_selected}`);
+                    this.$router.push({
+                        path: `/questions/4/draft3/${_selected}`,
+                        query: {
+                            question1: this.$route.query.question1,
+                            question2: this.$route.query.question2,
+                            question3: this.$route.query.question3,
+                        }
+                    });
                 }).catch(err => {
                     this.isGenerating = false;
                     console.log(err)
                 });
             } else {
                 this.$store.dispatch('setDraft3', this.$store.state.draft2)
-                this.$router.push(`/generate_three_version`);
+                this.$router.push({
+                    path: `/generate_three_version`,
+                    query: {
+                        question1: this.$route.query.question1,
+                        question2: this.$route.query.question2,
+                        question3: this.$route.query.question3,
+                    }
+                });
             }
         }
 
@@ -142,7 +156,13 @@ export default {
         },
         otherCardDisabled() {
             return this.selected.includes('none apply');
-        }
+        },
+        subject() {
+            return this.$route.query.question1;
+        },
+        mode() {
+            return this.$route.query.question3;
+        },
     },
 }
 </script>

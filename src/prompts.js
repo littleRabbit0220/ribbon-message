@@ -46,11 +46,12 @@ export const PROMPT_TWO = (draft ,tone) => {
 }
 //--------------------------------------------------------------------------------
 export const PROMPT_THREE = (draft, selection) => {
-    let prompt = `"${draft}"\n Update the above email knowing that the learner `;
-    selection.forEach( item => prompt += `${item}, `);
+    let prompt = `${draft}\n Update the above email by knowing information such as `;
+    selection.forEach( item => prompt += `"${item}", `);
+    prompt += " about the learner ";
     return prompt;
 }
 //--------------------------------------------------------------------------------
 export const PROMPT_FOUR = (draft) => {
-    return `Now give me 3 versions of the email "${draft}" varying by tone, length and level of detail. In the end of each version, insert $ symbol`;
+    return `Now give me 3 versions of the email "${draft}" varying by tone, length and level of detail. In the end of each version, insert $ symbol. And don't write "Version X:" above each version.`;
 }

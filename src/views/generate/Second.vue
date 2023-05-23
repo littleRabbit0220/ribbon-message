@@ -58,7 +58,13 @@ export default {
             this.answer = generateAnswer(prompt).then(res => {
                 this.isGenerating = false;
                 this.$store.dispatch('setDraft1', res);
-                this.$router.push('/questions/3');
+                this.$router.push({
+                    path: '/questions/3',
+                    query: {
+                        question1: question1,
+                        question2: this.question2,
+                    }
+                });
             }).catch(err => {
                 this.isGenerating = false;
                 console.log(err)

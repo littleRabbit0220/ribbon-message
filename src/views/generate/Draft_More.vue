@@ -51,15 +51,15 @@
     </div>
 </template>
 <script>
-import MenuBar from '../components/MenuBar.vue';
-import ToggleCard from '../components/ToggleCard.vue';
-import Button from '../components/Button.vue';
-import Paper from '../components/Paper.vue';
-import ShareButton from '../components/ShareButton.vue';
-import generateAnswer from '../actions/generate';
-import DisablePanel from '../components/utils/DisablePanel.vue';
-import LoadingPanel from '../components/utils/LoadingPanel.vue';
-import { PROMPT_FOUR } from '../prompts';
+import MenuBar from '../../components/MenuBar.vue';
+import ToggleCard from '../../components/ToggleCard.vue';
+import Button from '../../components/Button.vue';
+import Paper from '../../components/Paper.vue';
+import ShareButton from '../../components/ShareButton.vue';
+import generateAnswer from '../../actions/generate';
+import DisablePanel from '../../components/utils/DisablePanel.vue';
+import LoadingPanel from '../../components/utils/LoadingPanel.vue';
+import { PROMPT_FOUR } from '../../prompts';
 export default {
     components: {
         ToggleCard,

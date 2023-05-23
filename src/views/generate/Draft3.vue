@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="primary-panel primary-panel-sd primary-panel-sm">
-                <Paper :content="draft" draftNum="3" :mode="mode" />
+                <Paper :content="draft" draftNum="3" :mode="mode" :subject="subject" />
             </div>
         </div>
         <div class=" md:hidden sm:block w-full fixed bottom-0 ">
@@ -65,15 +65,28 @@ export default {
     name: 'Four Question',
     methods: {
         onNextPage() {
-            this.$router.push('/generate_three_version')
+            this.$router.push({
+                path: '/generate_three_version',
+                query: {
+                    question1: this.$route.query.question1,
+                    question2: this.$route.query.question2,
+                    question3: this.$route.query.question3,
+                }
+            })
         },
         updateLeD() {
-            this.$router.push('/questions/4')
+            this.$router.go(-1);
         }
     },
     computed: {
         draft() {
             return this.$store.state.draft3;
+        },
+        subject() {
+            return this.$route.query.question1;
+        },
+        mode() {
+            return this.$route.query.question3;
         },
     }
 }

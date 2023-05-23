@@ -24,8 +24,8 @@
     </div>
 </template>
 <script>
-import MenuBar from '../components/MenuBar.vue';
-import Button from '../components/Button.vue';
+import MenuBar from '../../components/MenuBar.vue';
+import Button from '../../components/Button.vue';
 export default {
     components: {
         MenuBar,
